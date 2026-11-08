@@ -16,9 +16,10 @@ public class Main {
         System.out.println("================================");
 
         System.out.println("1. Add Task");
-        System.out.println("2. View Tasks");
+         System.out.println("2. View Tasks");
         System.out.println("3. Mark Task as Completed");
-        System.out.println("4. Exit");
+        System.out.println("4. Delete Task");
+         System.out.println("5. Exit");
 
         System.out.print("\nEnter your choice ");
 
@@ -78,14 +79,39 @@ public class Main {
 
         }
 
-
         else if(choice == 4){
+           if (tasks.isEmpty()) {
+            System.out.println("No tasks available!");
+} else{
+
+       System.out.println("Enter the task U want to remove!");
+          
+          int taskNumber = scanner.nextInt();
+          int option2 = taskNumber - 1;
+
+            if (option2 >= 0 && option2 < tasks.size()) {
+
+            tasks.remove(option2);
+                 
+}
+             else {
+              System.out.println("Invalid task number!");
+     }
+
+
+
+
+
+        } }
+
+
+        else if(choice == 5){
             System.out.println("Exiting Task Manager");
         }
         else{
             System.out.println("Invalid Choice");
         }
-    }while(choice != 4);
+    }while(choice != 5);
 
         
         scanner.close();
